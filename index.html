@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- Объявляем, что это HTML5 документ -->
+
+<html lang="en">
+<!-- Открываем тег html, указываем язык страницы английский (можно было "ru" для русского) -->
+
+<head>
+    <title>Аренда премиальных автомобилей</title>
+    <!-- Заголовок страницы, отображается в вкладке браузера -->
+    <meta charset="UTF-8" />
+    <!-- Указываем кодировку UTF-8, чтобы корректно отображались русские символы -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-eval';">
+    <!-- Политика безопасности контента. 'unsafe-eval' может быть небезопасно, но для учебного проекта нормально -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Адаптивность для мобильных устройств -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- Подключаем CSS файл -->
+</head>
+
+<body>
+    <header class="header">
+        <!-- Шапка сайта -->
+        <img src="images/logo.png" alt="logo" />
+        <!-- Логотип -->
+        <a href="tel:+971523898989" class="button">+971 52 389 89 89</a>
+        <!-- Ссылка на звонок, стилизована как кнопка -->
+    </header>
+
+    <section class="main">
+        <div>
+            <div class="main-info">
+                <!-- Главный информационный блок -->
+                <h1>Покорите дороги за рулём легендарных автомобилей!</h1>
+                <!-- Заголовок -->
+                <p>
+                    От эксклюзивных спорткаров до гоночных шедевров — выбирайте мечту,
+                    садитесь за руль и ощутите мощь премиального авто на полную!
+                </p>
+                <!-- Описание -->
+                <button id="showCars" class="button showButton">Посмотреть автомобили</button>
+                <!-- Кнопка для показа машин -->
+                <div id="carsContainer" class="hidden">
+                    <!-- Контейнер для списка машин, изначально скрыт классом hidden -->
+                    <!-- Сюда JS добавит список -->
+                </div>
+
+                <div id="orderModal" class="hidden">
+                    <!-- Модальное окно заказа, изначально скрыто -->
+                    <div id="orderContainer">
+                        <h2 id="modalTitle">Заказать авто</h2>
+                        <form id="orderForm">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                            <!-- Поле для имени, required означает обязательное заполнение -->
+                            <input type="tel" id="phone" placeholder="Телефон +375291234567" required>
+                            <!-- Поле для телефона, тоже обязательное -->
+                            <button type="submit" class="button">Подтвердить</button>
+                            <!-- Кнопка отправки формы -->
+                        </form>
+                        <button class="button" id="closeOrder">Закрыть</button>
+                        <!-- Кнопка закрытия модального окна -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts/cars-data.js"></script>
+    <!-- Подключаем JS с данными автомобилей -->
+    <script src="scripts/main.js"></script>
+    <!-- Подключаем основной JS -->
+</body>
+
+</html>

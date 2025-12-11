@@ -1,142 +1,131 @@
-/* === ОБЩИЕ НАСТРОЙКИ СТРАНИЦЫ === */
 body {
-    margin: 0; /* убираем отступы по краям */
-    font-family: "Inter", Arial, sans-serif; /* современный шрифт, Inter загружен отдельно? если нет, fallback Arial */
-    background-color: #0f0f11; /* тёмный фон */
-    color: #e4e4e7; /* светлый текст */
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: #0f0f11;
+    color: #e4e4e7;
 }
 
-/* === ШАПКА САЙТА === */
 .header {
-    display: flex; /* горизонтальное выравнивание элементов */
-    justify-content: space-between; /* логотип слева, кнопка справа */
-    align-items: center; /* выравнивание по вертикали */
-    padding: 20px 40px; /* внутренние отступы */
-    background: #232427; /* фон шапки */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.35); /* тень */
-    border-bottom: 1px solid #3a3b3d; /* тонкая нижняя граница */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #232427;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.35);
+    border-bottom: 1px solid #3a3b3d;
 }
 
 .header img {
-    height: 40px; /* фиксированная высота логотипа */
+    height: 40px;
 }
 
-/* === КНОПКИ === */
 .button {
-    text-decoration: none; /* убираем подчеркивание текста */
-    font-weight: bold; /* жирный текст */
-    font-size: 18px; /* размер текста */
-    padding: 10px 20px; /* внутренние отступы */
-    background: linear-gradient(135deg, #d4a74e 0%, #a87c33 100%); /* золотой градиент */
-    color: #fff; /* белый текст */
-    border-radius: 5px; /* скругление углов */
-    border: none; /* убираем рамку */
-    cursor: pointer; /* курсор в виде руки */
-    transition: transform 0.2s ease, opacity 0.2s ease; /* плавные эффекты при наведении */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #d4a74e 0%, #a87c33 100%);
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .button:hover {
-    opacity: 0.9; /* затемнение */
-    transform: translateY(-2px); /* лёгкое поднятие */
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 .showButton {
-    width: 100%; /* растягиваем кнопку на всю ширину контейнера */
-    margin-bottom: 20px; /* отступ снизу */
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-/* === ОСНОВНОЙ КОНТЕЙНЕР === */
 .main {
-    padding: 20px 40px; /* отступы вокруг содержимого */
+    padding: 20px 40px;
 }
 
 .main-info h1 {
-    font-size: 80px; /* очень большой заголовок */
-    line-height: 1; /* высота строки */
-    margin-bottom: 40px; /* отступ снизу */
-    font-weight: normal; /* не жирный */
-    color: white; /* белый */
+    font-size: 80px;
+    line-height: 1;
+    margin-bottom: 40px;
+    font-weight: normal;
+    color: white;
 }
 
-/* Скрытый блок */
 .hidden {
-    display: none !important; /* скрываем элемент */
+    display: none !important;
 }
 
 .hidden.visible {
-    display: grid !important; /* показываем в виде сетки */
-    grid-template-columns: 1fr 1fr; /* две колонки */
-    gap: 20px; /* расстояние между элементами */
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-/* === КАРТОЧКА АВТО === */
 .car-item {
-    display: flex; /* контент горизонтально */
-    gap: 20px; /* расстояние между картинкой и текстом */
-    padding: 20px; /* внутренние отступы */
-    background: #1a1a1d; /* фон */
-    border: 1px solid #2a2a2e; /* рамка */
-    border-radius: 12px; /* скругление */
-    align-items: stretch; /* равная высота элементов */
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4); /* тень */
-    transition: transform .2s ease, box-shadow .2s ease; /* плавная анимация */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #1a1a1d;
+    border: 1px solid #2a2a2e;
+    border-radius: 12px;
+    align-items: stretch;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    transition: transform .2s ease, box-shadow .2s ease;
 }
 
 .car-item:hover {
-    transform: translateY(-3px); /* подъём карточки */
-    box-shadow: 0 6px 25px rgba(0,0,0,0.5); /* увеличиваем тень */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.5);
 }
 
-/* Изображение */
 .car-item img {
-    height: 250px; /* фиксированная высота */
-    width: auto; /* пропорциональная ширина */
-    object-fit: cover; /* обрезает лишнее */
-    border-radius: 8px; /* скругление */
-    box-shadow: 0 0 10px rgba(0,0,0,0.4); /* тень */
+    height: 250px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* Правая часть карточки */
 .car-detail {
-    height: 250px; /* совпадает с картинкой */
-    flex: 1; /* занимает всё доступное место */
-    display: flex; /* вертикальный флекс */
-    flex-direction: column; /* колонка */
-}
-
-/* Список внутри карточки */
-.car-item ul {
-    margin: 0; /* убираем отступы */
-    padding: 0;
-    list-style: none; /* убираем маркеры */
-    flex: 1; /* растягиваем */
-    display: flex; /* вертикальная колонка */
-    flex-direction: column;
-}
-
-/* Верхняя часть карточки */
-.car-top {
-    flex: 1; /* занимает всё место */
+    height: 250px;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* скрываем лишний текст */
+}
+
+.car-item ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-top {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .car-top h3 {
-    margin: 0 0 8px 0; /* отступ снизу */
-    color: #ffffff; /* белый */
+    margin: 0 0 8px 0;
+    color: #ffffff;
 }
 
 .car-description {
-    flex: 1; /* растягивается */
+    flex: 1;
     overflow: hidden;
     color: #cccccc;
-    line-height: 1.4; /* читаемость */
+    line-height: 1.4;
 }
 
-/* Нижняя часть карточки */
 .car-bottom {
-    margin-top: auto; /* прижимает вниз */
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -144,12 +133,12 @@ body {
 
 .price {
     font-weight: bold;
-    color: #d4a74e; /* золотой */
+    color: #d4a74e;
 }
 
 .orderButton {
-    width: 100%; /* растягиваем */
-    padding: 10px 0; /* высота */
+    width: 100%;
+    padding: 10px 0;
     background: linear-gradient(135deg, #d4a74e 0%, #a87c33 100%);
     color: #fff;
     border-radius: 5px;
@@ -163,18 +152,17 @@ body {
     transform: translateY(-2px);
 }
 
-/* Модальное окно */
 #orderModal {
-    position: fixed; /* фиксируем по экрану */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* затемненный фон */
-    display: flex; /* выравнивание окна по центру */
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100; /* поверх всего */
+    z-index: 100;
 }
 
 #orderContainer {
@@ -196,7 +184,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* расстояние между полями */
+    gap: 15px;
 }
 
 #orderForm input {
@@ -209,8 +197,8 @@ body {
 }
 
 #orderForm input:focus {
-    outline: none; /* убираем стандартный обвод */
-    border: 1px solid #d4a74e; /* рамка при фокусе */
+    outline: none;
+    border: 1px solid #d4a74e;
 }
 
 #orderForm button {
@@ -234,98 +222,286 @@ body {
     background: #333;
 }
 
-/* ======================================================= */
-/* === АДАПТИВНОСТЬ: ОДНА КОЛОНКА ДЛЯ ВСЕХ ПЛАНШЕТОВ И МОБИЛЬНЫХ === */
-/* ======================================================= */
-
-/* === ВСЕ УСТРОЙСТВА ДО 1366px (телефоны, планшеты, iPad Pro) === */
 @media (max-width: 1366px) {
-    /* === Шапка === */
     .header {
-        flex-direction: column; /* логотип сверху, кнопка снизу */
+        flex-direction: column;
         align-items: center;
         padding: 15px 20px;
         gap: 10px;
     }
-    .header img { height: 35px; } /* уменьшаем логотип */
-    .header .button { font-size: 16px; padding: 8px 15px; }
-
-    /* === Основной блок === */
-    .main { padding: 15px 20px; }
-    .main-info h1 { font-size: 36px; line-height: 1.2; margin-bottom: 20px; }
-    .main-info p { font-size: 14px; margin-bottom: 15px; }
-    .showButton { font-size: 16px; padding: 8px 15px; }
-
-    /* === Сетка автомобилей === */
+    
+    .header img {
+        height: 35px;
+    }
+    
+    .header .button {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
+    .main {
+        padding: 15px 20px;
+    }
+    
+    .main-info h1 {
+        font-size: 36px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    
+    .showButton {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+    
     .hidden.visible {
         display: grid;
-        grid-template-columns: 1fr; /* одна колонка */
-        gap: 20px; /* расстояние между карточками */
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-
-    /* === Карточка авто === */
+    
     .car-item {
-        flex-direction: column; /* вертикально: картинка сверху, текст снизу */
+        flex-direction: column;
         align-items: center;
         padding: 15px;
     }
-
+    
     .car-item img {
-        width: 100%; /* картинка растягивается на всю ширину карточки */
+        width: 100%;
         height: auto;
         margin-bottom: 10px;
         object-fit: cover;
         border-radius: 8px;
     }
-
-    .car-detail {
-        width: 100%; /* текст и кнопка под картинкой */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        gap: 10px;
-    }
-
-    .car-top h3 { font-size: 20px; margin-bottom: 8px; }
-    .car-description { font-size: 15px; line-height: 1.4; }
-    .car-bottom { display: flex; flex-direction: column; gap: 10px; }
-    .price { font-size: 18px; }
-    .orderButton { padding: 10px 0; font-size: 16px; }
-
-    /* === Модальное окно === */
-    #orderContainer { width: 90%; padding: 20px; }
-    #orderContainer h2 { font-size: 22px; margin-bottom: 15px; }
-    #orderForm input, #orderForm button, #closeOrder { font-size: 15px; padding: 8px 0; }
 }
 
-/* === ПК: экраны больше 1366px === */
-@media (min-width: 1367px) {
-    .hidden.visible {
-        grid-template-columns: 1fr 1fr; /* две колонки на ПК */
+.footer {
+    background: #141416;
+    color: #d9d9d9;
+    padding: 40px 40px 20px;
+    border-top: 1px solid #2a2a2e;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.35);
+    font-size: 16px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 220px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.footer-logo img {
+    width: 88px;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.footer-logo span {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+    letter-spacing: 0.2px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #bbbbbb;
+}
+
+.footer-contacts p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.footer-contacts a {
+    color: #d4a74e;
+    text-decoration: none;
+    transition: opacity .15s ease, transform .15s ease;
+}
+
+.footer-contacts a:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.footer-right {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.footer-nav,
+.footer-legal {
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-nav h3,
+.footer-legal h3 {
+    margin: 0 0 12px 0;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.footer-nav ul,
+.footer-legal ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-nav li,
+.footer-legal li {
+    margin-bottom: 10px;
+}
+
+.footer-nav a,
+.footer-legal a {
+    color: #bbbbbb;
+    text-decoration: none;
+    transition: color .15s ease, transform .15s ease;
+    font-size: 15px;
+}
+
+.footer-nav a:hover,
+.footer-legal a:hover {
+    color: #d4a74e;
+    transform: translateX(2px);
+}
+
+.footer-bottom {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #232427;
+    text-align: center;
+    color: #8a8a8a;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer a {
+    padding: 2px 0;
+    display: inline-block;
+}
+
+@media (max-width: 1200px) {
+    .footer-container {
         gap: 30px;
+        padding: 0 20px;
     }
-
-    .car-item {
-        flex-direction: row; /* картинка слева, текст справа */
-        align-items: stretch;
-        padding: 20px;
-    }
-
-    .car-item img {
-        width: 55%;
-        max-height: 350px;
-        object-fit: cover;
-        border-radius: 8px;
-    }
-
-    .car-detail {
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    .footer-right {
+        gap: 40px;
     }
 }
 
+@media (max-width: 900px) {
+    .footer {
+        padding: 32px 20px 18px;
+    }
 
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+        align-items: center;
+    }
 
+    .footer-logo {
+        align-items: center;
+        text-align: center;
+    }
 
+    .footer-logo img {
+        width: 96px;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+    }
+
+    .footer-right {
+        justify-content: center;
+        gap: 24px;
+        flex-direction: column;
+    }
+
+    .footer-nav,
+    .footer-legal {
+        min-width: 0;
+    }
+
+    .footer-contacts p {
+        font-size: 15px;
+    }
+
+    .footer-logo span {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 24px 14px 14px;
+        font-size: 15px;
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+
+    .footer-logo span {
+        font-size: 17px;
+    }
+
+    .footer-contacts p {
+        font-size: 14px;
+    }
+
+    .footer-nav a,
+    .footer-legal a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 901px) {
+    .footer-container {
+        grid-template-columns: 1fr auto;
+    }
+    .footer-left {
+        align-self: start;
+    }
+    .footer-right {
+        align-self: start;
+    }
+}

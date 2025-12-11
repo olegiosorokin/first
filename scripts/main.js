@@ -1,31 +1,22 @@
-const button = document.getElementById('showCars'); 
-// Находим кнопку "Посмотреть автомобили"
-const container = document.getElementById('carsContainer'); 
-// Контейнер для карточек
-const cars = window.cars; 
-// Массив с данными машин из cars-data.js
+const button = document.getElementById('showCars');
+const container = document.getElementById('carsContainer');
+const cars = window.cars;
 
-const orderModal = document.getElementById('orderModal'); 
-// Модальное окно
-const closeOrder = document.getElementById('closeOrder'); 
-// Кнопка закрытия
-const modalTitle = document.getElementById('modalTitle'); 
-// Заголовок модального окна
-const orderForm = document.getElementById('orderForm'); 
-// Форма внутри модального окна
+const orderModal = document.getElementById('orderModal');
+const closeOrder = document.getElementById('closeOrder');
+const modalTitle = document.getElementById('modalTitle');
+const orderForm = document.getElementById('orderForm');
 
-orderModal.classList.add('hidden'); 
-// Скрываем окно при загрузке
-orderModal.classList.remove('visible'); 
-// Убираем видимость
+orderModal.classList.add('hidden');
+orderModal.classList.remove('visible');
 
 function showCars() {
-    container.innerHTML = ''; 
-    // Очищаем контейнер перед добавлением
+    container.innerHTML = '';
 
     cars.forEach(car => {
-        const carElement = document.createElement('div'); 
-        carElement.className = 'car-item'; 
+        const carElement = document.createElement('div');
+        carElement.className = 'car-item';
+
         carElement.innerHTML = `
             <img src="${car.image}" alt="${car.name}">
             <div class="car-detail">
@@ -41,61 +32,54 @@ function showCars() {
                 </ul>
             </div>
         `;
-        container.appendChild(carElement); 
-        // Добавляем карточку в контейнер
+
+        container.appendChild(carElement);
     });
 
-    container.classList.add('visible'); 
-    // Показываем контейнер
+    container.classList.add('visible');
 
-    const orderButtons = container.querySelectorAll('.orderButton'); 
-    // Находим все кнопки "Заказать" после создания карточек
+    const orderButtons = container.querySelectorAll('.orderButton');
+
     orderButtons.forEach(orderBtn => {
         orderBtn.addEventListener('click', () => {
-            const carItem = orderBtn.closest('.car-item'); 
-            const carName = carItem.querySelector('h3').innerText; 
-            modalTitle.innerText = `Заказать: ${carName}`; 
-            // Меняем заголовок модального окна
+            const carItem = orderBtn.closest('.car-item');
+            const carName = carItem.querySelector('h3').innerText;
 
-            orderModal.classList.remove('hidden'); 
-            orderModal.classList.add('visible'); 
-            // Показываем окно
+            modalTitle.innerText = `Заказать: ${carName}`;
+            orderModal.classList.remove('hidden');
+            orderModal.classList.add('visible');
         });
     });
 }
 
-button.addEventListener('click', showCars); 
-// Навешиваем обработчик на кнопку "Посмотреть автомобили"
+button.addEventListener('click', showCars);
 
 closeOrder.addEventListener('click', () => {
-    orderModal.classList.remove('visible'); 
-    orderModal.classList.add('hidden'); 
-    orderForm.reset(); 
-    // Закрытие окна и очистка формы
+    orderModal.classList.remove('visible');
+    orderModal.classList.add('hidden');
+    orderForm.reset();
 });
 
 orderForm.addEventListener('submit', (e) => {
-    e.preventDefault(); 
-    // Отменяем стандартное действие формы
+    e.preventDefault();
 
-    const name = document.getElementById('name').value.trim(); 
-    const phone = document.getElementById('phone').value.trim(); 
-    const phoneRegex = /^\+?\d{11,15}$/; 
-    // Простейшая проверка телефона: + и 11–15 цифр
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const phoneRegex = /^\+?\d{11,15}$/;
 
-    if(name === '' || phone === '') {
+    if (name === '' || phone === '') {
         alert('Пожалуйста, заполните все поля.');
         return;
     }
 
-    if(!phoneRegex.test(phone)) {
+    if (!phoneRegex.test(phone)) {
         alert('Введите корректный номер телефона.');
         return;
     }
 
     alert('Спасибо за ваш заказ. Менеджер перезвонит вам в течении 5 минут.');
-    orderModal.classList.remove('visible'); 
-    orderModal.classList.add('hidden'); 
-    orderForm.reset(); 
-    // После успешного заказа окно закрывается и форма очищается
+
+    orderModal.classList.remove('visible');
+    orderModal.classList.add('hidden');
+    orderForm.reset();
 });
